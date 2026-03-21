@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sites Profissionais — Sipos Studio</title>
+<meta name="description" content="Sites profissionais para pequenos negócios. Rápido, moderno, aparece no Google. Do zero ao ar em 7 dias."/>
+<link rel="icon" type="image/png" href="/favicon.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{--g:#22c55e;--g2:#16a34a;--bg:#0a0a0a;--card:#111;--brd:rgba(255,255,255,.08);--lt:#f0f0f0;--gr:#666;--gr2:#888}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--lt);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:100%;max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:100;padding:16px 0;background:rgba(10,10,10,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--brd)}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo-img{height:34px;width:auto}
+.btn-nav{padding:9px 20px;border-radius:8px;background:var(--g);color:#fff;font-size:.83rem;font-weight:600;font-family:'Inter',sans-serif;border:none;cursor:pointer;transition:background .2s}
+.btn-nav:hover{background:var(--g2)}
+
+/* HERO SERVIÇO */
+.srv-hero{padding:80px 0 60px;border-bottom:1px solid var(--brd)}
+.breadcrumb{font-size:.78rem;color:var(--gr);margin-bottom:24px}
+.breadcrumb a{color:var(--gr);transition:color .2s}
+.breadcrumb a:hover{color:var(--g)}
+.breadcrumb span{margin:0 6px;color:#333}
+.srv-hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;letter-spacing:-.035em;margin-bottom:16px;line-height:1.1}
+.srv-hero h1 span{color:var(--g)}
+.srv-hero p{font-size:1.05rem;color:#888;max-width:580px;line-height:1.75;margin-bottom:32px}
+.srv-price-tag{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:999px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);font-size:.88rem;font-weight:600;color:var(--g);margin-bottom:32px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:.9rem;font-weight:600;background:var(--g);color:#fff;border:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn-primary:hover{background:var(--g2);transform:translateY(-2px)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:.9rem;font-weight:500;background:transparent;color:var(--lt);border:1px solid var(--brd);cursor:pointer;transition:all .2s}
+.btn-outline:hover{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.04)}
+
+/* O QUE INCLUI */
+.includes{padding:72px 0;border-bottom:1px solid var(--brd)}
+.includes h2{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:40px}
+.includes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:640px){.includes-grid{grid-template-columns:1fr}}
+.inc-item{display:flex;align-items:flex-start;gap:14px;padding:20px;background:var(--card);border:1px solid var(--brd);border-radius:12px;transition:border-color .2s}
+.inc-item:hover{border-color:rgba(34,197,94,.25)}
+.inc-ico{width:36px;height:36px;border-radius:8px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.inc-ico svg{width:16px;height:16px;stroke:var(--g);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.inc-item strong{display:block;font-size:.9rem;font-weight:600;margin-bottom:4px}
+.inc-item span{font-size:.82rem;color:var(--gr);line-height:1.5}
+
+/* PROCESSO */
+.processo{padding:72px 0;border-bottom:1px solid var(--brd);background:var(--card)}
+.processo h2{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:40px;text-align:center}
+.steps{display:flex;flex-direction:column;gap:0;max-width:600px;margin:0 auto}
+.s-step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--brd)}
+.s-step:last-child{border-bottom:none}
+.s-num{width:36px;height:36px;border-radius:50%;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);color:var(--g);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.s-step strong{display:block;font-size:.92rem;font-weight:600;margin-bottom:4px}
+.s-step p{font-size:.84rem;color:var(--gr);line-height:1.6}
+
+/* FAQ */
+.faq{padding:72px 0;border-bottom:1px solid var(--brd)}
+.faq h2{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:40px}
+.faq-item{border-bottom:1px solid var(--brd);overflow:hidden}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 0;cursor:pointer;font-size:.92rem;font-weight:600;gap:16px}
+.faq-q svg{width:16px;height:16px;stroke:var(--gr);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-q svg{transform:rotate(180deg)}
+.faq-a{font-size:.87rem;color:var(--gr);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:16px}
+
+/* CTA */
+.srv-cta{padding:72px 0;text-align:center}
+.srv-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.03em;margin-bottom:14px}
+.srv-cta h2 span{color:var(--g)}
+.srv-cta p{font-size:.97rem;color:var(--gr);max-width:440px;margin:0 auto 32px;line-height:1.7}
+
+/* FOOTER */
+footer{padding:36px 0;border-top:1px solid var(--brd);text-align:center}
+footer p{font-size:.78rem;color:#333}
+footer a{color:var(--g)}
+
+@media(max-width:640px){
+  .srv-hero{padding:60px 0 40px}
+  .hero-ctas{flex-direction:column;max-width:280px}
+  .btn-primary,.btn-outline{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="/"><img class="logo-img" src="/logo.png" alt="Sipos Studio"/></a>
+    <a href="https://wa.me/5547989201634?text=Olá! Quero uma prévia gratuita para meu site." target="_blank" class="btn-nav">Quero uma prévia grátis</a>
+  </div>
+</header>
+
+<section class="srv-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Início</a><span>›</span><a href="/#servicos">Serviços</a><span>›</span>Sites Profissionais</div>
+    <h1>Sites profissionais que<br><span>aparecem no Google</span></h1>
+    <p>Seu cliente pesquisa no Google antes de comprar. Se seu negócio não aparecer, ele vai no concorrente. A gente resolve isso com um site rápido, moderno e otimizado.</p>
+    <div class="srv-price-tag">A partir de R$797 · Entrega em 7 dias</div><br/>
+    <div class="hero-ctas">
+      <a href="https://wa.me/5547989201634?text=Olá! Quero saber mais sobre Sites Profissionais." target="_blank" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quero minha prévia gratuita
+      </a>
+      <a href="/#portfolio" class="btn-outline">Ver portfólio →</a>
+    </div>
+  </div>
+</section>
+
+<section class="includes">
+  <div class="container">
+    <h2>O que está incluído</h2>
+    <div class="includes-grid">
+      <div class="inc-item"><div class="inc-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div><strong>Design exclusivo para o seu negócio</strong><span>Nenhum template genérico. Cada site é criado do zero pensando na identidade da sua empresa.</span></div></div>
+      <div class="inc-item"><div class="inc-ico"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><div><strong>100% responsivo — funciona no celular</strong><span>Mais de 80% dos clientes acessam pelo celular. Seu site vai funcionar perfeitamente em qualquer dispositivo.</span></div></div>
+      <div class="inc-item"><div class="inc-ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div><strong>Otimizado para o Google (SEO)</strong><span>Estrutura, velocidade e conteúdo configurados para que seu site apareça nas buscas do Google.</span></div></div>
+      <div class="inc-item"><div class="inc-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81A2 2 0 0 1 9.36 8.5L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><strong>Botão de WhatsApp em destaque</strong><span>Seus clientes chegam ao site e entram em contato com você com um clique. Direto e sem barreiras.</span></div></div>
+      <div class="inc-item"><div class="inc-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><strong>Mapa de localização integrado</strong><span>Google Maps incorporado direto no site para que seus clientes te encontrem facilmente.</span></div></div>
+      <div class="inc-item"><div class="inc-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><strong>Rápido e leve</strong><span>Sites otimizados que carregam em menos de 2 segundos. Velocidade é fator de rankeamento no Google.</span></div></div>
+      <div class="inc-item"><div class="inc-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><strong>SSL e hospedagem inclusos</strong><span>Certificado de segurança e 1 ano de hospedagem já estão no preço. Sem surpresas.</span></div></div>
+      <div class="inc-item"><div class="inc-ico"><svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg></div><div><strong>Suporte pós-entrega</strong><span>Precisa ajustar um texto ou trocar uma foto? A gente está aqui para ajudar depois da entrega.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="processo">
+  <div class="container">
+    <h2>Como funciona</h2>
+    <div class="steps">
+      <div class="s-step"><div class="s-num">01</div><div><strong>Você manda o contato</strong><p>Nos conta o que é seu negócio. Em até 24h, enviamos uma prévia de como ficaria seu site — sem cobrar nada.</p></div></div>
+      <div class="s-step"><div class="s-num">02</div><div><strong>Você aprova e ajusta</strong><p>Viu a prévia e gostou? A gente ajusta cores, textos, fotos — o que precisar até ficar exatamente como você quer.</p></div></div>
+      <div class="s-step"><div class="s-num">03</div><div><strong>Pagamento e desenvolvimento</strong><p>Confirmado o projeto, 50% de entrada e 50% na entrega. Desenvolvemos o site completo em até 7 dias úteis.</p></div></div>
+      <div class="s-step"><div class="s-num">04</div><div><strong>Site no ar</strong><p>Publicamos com seu domínio, configuramos o Google e te entregamos tudo funcionando. Seu negócio online 24h.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Preciso saber de tecnologia para ter um site?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+      <div class="faq-a">Não precisa saber nada. A gente cuida de tudo — desde a criação até a publicação. Você só precisa nos contar sobre o seu negócio e aprovar o resultado.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Quanto tempo leva para ficar pronto?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+      <div class="faq-a">Sites profissionais ficam prontos em até 7 dias úteis após a aprovação da prévia e confirmação do pagamento.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">E depois que o site fica pronto, quem cuida?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+      <div class="faq-a">A hospedagem e o domínio ficam por conta da Sipos Studio no primeiro ano. Depois, você pode continuar conosco ou migrar para onde preferir. Somos transparentes com isso.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Posso pedir alterações depois da entrega?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+      <div class="faq-a">Sim. Pequenas alterações de texto e imagens nos primeiros 30 dias estão incluídas. Para mudanças maiores, temos planos de manutenção mensal.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Meu site vai aparecer no Google?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+      <div class="faq-a">O site já sai configurado com SEO básico — estrutura correta, velocidade otimizada e integração com Google Search Console. O rankeamento depende de vários fatores, mas a base fica certa desde o início.</div>
+    </div>
+  </div>
+</section>
+
+<section class="srv-cta">
+  <div class="container">
+    <h2>Pronto para <span>ser encontrado</span>?</h2>
+    <p>Manda o WhatsApp agora. Em menos de 24h você já tem a prévia do seu negócio no digital — sem pagar nada.</p>
+    <a href="https://wa.me/5547989201634?text=Olá! Quero uma prévia gratuita do meu site." target="_blank" class="btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Quero minha prévia gratuita
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Sipos Studio · <a href="/">Voltar ao início</a></p>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(el){
+  const item=el.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+</script>
+</body>
+</html>
