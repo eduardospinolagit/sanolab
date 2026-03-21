@@ -97,23 +97,8 @@ h2.sec-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-
 .srv-card p{font-size:.855rem;color:#666;line-height:1.7;flex:1;margin-bottom:20px}
 .srv-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto}
 .srv-price{font-size:.72rem;font-weight:600;color:var(--g);background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.15);padding:3px 10px;border-radius:999px}
-.srv-more{font-size:.75rem;color:#444;font-weight:500;transition:color .2s;cursor:pointer;border:none;background:none;font-family:'Inter',sans-serif;padding:0}
-.srv-more:hover{color:var(--gr2)}
 /* MODAL SERVIÇOS */
-.sm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:850;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
-.sm-overlay.open{opacity:1;pointer-events:all}
-.sm-box{background:var(--card);border:1px solid var(--brd);border-radius:20px;padding:36px;max-width:540px;width:100%;position:relative;transform:translateY(20px) scale(.97);transition:transform .35s cubic-bezier(.22,1,.36,1);max-height:90vh;overflow-y:auto}
-.sm-overlay.open .sm-box{transform:none}
-.sm-close{position:absolute;top:13px;right:15px;background:transparent;border:none;color:var(--gr);cursor:pointer;font-size:1.1rem;padding:4px;transition:color .2s;font-family:'Inter',sans-serif}
-.sm-close:hover{color:var(--lt)}
-.sm-ico{width:48px;height:48px;border-radius:12px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.15);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.sm-ico svg{width:22px;height:22px;stroke:var(--g);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.sm-box h3{font-size:1.3rem;font-weight:800;margin-bottom:8px;letter-spacing:-.02em}
-.sm-price{font-size:.78rem;font-weight:600;color:var(--g);background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.15);padding:4px 12px;border-radius:999px;display:inline-block;margin-bottom:16px}
-.sm-box p{font-size:.9rem;color:#707070;line-height:1.8;margin-bottom:12px}
-.sm-list{display:flex;flex-direction:column;gap:8px;margin:16px 0 22px}
-.sm-item{display:flex;align-items:flex-start;gap:9px;font-size:.86rem;color:#888}
-.sm-item::before{content:'✓';color:var(--g);font-weight:700;flex-shrink:0;margin-top:1px}
+
 
 /* PROCESS */
 #processo{background:var(--card);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)}
@@ -264,9 +249,7 @@ footer p{font-size:.78rem;color:#333}
 
 /* SRV MODAL */
 
-.sm-overlay.open{opacity:1;pointer-events:all}
 .sm-box{background:var(--card);border:1px solid var(--brd);border-radius:20px;padding:36px;max-width:540px;width:100%;position:relative;transform:translateY(20px) scale(.97);transition:transform .35s cubic-bezier(.22,1,.36,1);max-height:90vh;overflow-y:auto}
-.sm-overlay.open .sm-box{transform:none}
 .sm-close{position:absolute;top:13px;right:15px;background:transparent;border:none;color:var(--gr);cursor:pointer;font-size:1.1rem;padding:4px;transition:color .2s}
 .sm-close:hover{color:var(--lt)}
 .sm-ico{width:48px;height:48px;border-radius:12px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.15);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
@@ -372,37 +355,37 @@ footer p{font-size:.78rem;color:#333}
         <div class="srv-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
         <h3>Sites Profissionais</h3>
         <p>Site rápido, moderno e que aparece no Google. Apresentação profissional, WhatsApp, formulário e mapa. Do zero ao ar em 7 dias.</p>
-        <div class="srv-footer"><span class="srv-price">A partir de R$797</span><button class="srv-more" onclick="openSM('site')">Saiba mais →</button></div>
+        <div class="srv-footer"><span class="srv-price">A partir de R$797</span></div>
       </div>
       <div class="srv-card fade-scale d1">
         <div class="srv-ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><path d="M20 2v4m0 0h-4m4 0-3-3"/></svg></div>
         <h3>Automações com IA</h3>
         <p>Atendimento automático no WhatsApp, respostas inteligentes, agendamento e follow-up. Sua empresa funcionando 24h sem você precisar fazer nada.</p>
-        <div class="srv-footer"><span class="srv-price">A partir de R$497</span><button class="srv-more" onclick="openSM('auto')">Saiba mais →</button></div>
+        <div class="srv-footer"><span class="srv-price">A partir de R$497</span></div>
       </div>
       <div class="srv-card fade-scale d2">
         <div class="srv-ico"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
         <h3>Gestão de Tráfego Pago</h3>
         <p>Anúncios no Google e Instagram para trazer clientes qualificados. Configuração, gestão mensal e relatório de resultados.</p>
-        <div class="srv-footer"><span class="srv-price">A partir de R$597/mês</span><button class="srv-more" onclick="openSM('trafego')">Saiba mais →</button></div>
+        <div class="srv-footer"><span class="srv-price">A partir de R$597/mês</span></div>
       </div>
       <div class="srv-card fade-scale d1">
         <div class="srv-ico"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
         <h3>E-commerce</h3>
         <p>Loja virtual completa para vender seus produtos online. Pagamento integrado, carrinho, gestão de estoque e painel administrativo.</p>
-        <div class="srv-footer"><span class="srv-price">A partir de R$1.497</span><button class="srv-more" onclick="openSM('ecom')">Saiba mais →</button></div>
+        <div class="srv-footer"><span class="srv-price">A partir de R$1.497</span></div>
       </div>
       <div class="srv-card fade-scale d2">
         <div class="srv-ico"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
         <h3>Softwares e Aplicativos</h3>
         <p>Sistemas e apps personalizados para a operação do sua empresa. Controle interno, automação de processos e dashboards sob medida.</p>
-        <div class="srv-footer"><span class="srv-price">Sob consulta</span><button class="srv-more" onclick="openSM('soft')">Saiba mais →</button></div>
+        <div class="srv-footer"><span class="srv-price">Sob consulta</span></div>
       </div>
       <div class="srv-card fade-scale d3">
         <div class="srv-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>CRM Personalizado</h3>
         <p>Sistema de gestão de clientes feito para o sua empresa. Controle leads, follow-ups, vendas e receita em um painel simples e eficiente.</p>
-        <div class="srv-footer"><span class="srv-price">Sob consulta</span><button class="srv-more" onclick="openSM('crm')">Saiba mais →</button></div>
+        <div class="srv-footer"><span class="srv-price">Sob consulta</span></div>
       </div>
     </div>
   </div>
@@ -571,18 +554,7 @@ footer p{font-size:.78rem;color:#333}
 
 
 
-<!-- MODAL SERVIÇOS -->
-<div class="sm-overlay" id="smOverlay">
-  <div class="sm-box">
-    <button class="sm-close" onclick="closeSM()">✕</button>
-    <div class="sm-ico" id="smIco"></div>
-    <h3 id="smTitle" style="font-size:1.3rem;font-weight:800;margin-bottom:8px;letter-spacing:-.02em"></h3>
-    <div class="sm-price" id="smPrice"></div>
-    <p id="smDesc" style="font-size:.9rem;color:#707070;line-height:1.8;margin-bottom:12px"></p>
-    <div class="sm-list" id="smList"></div>
-    <a id="smCta" href="#" target="_blank" class="btn-primary" style="display:inline-flex;margin-top:4px" onclick="closeSM()">Quero saber mais →</a>
-  </div>
-</div>
+
 
 <script>
 // HEADER
@@ -624,27 +596,7 @@ function closePopup(){document.getElementById('popup').classList.remove('open')}
 document.getElementById('popup').addEventListener('click',e=>{if(e.target===e.currentTarget)closePopup()});
 setTimeout(()=>{if(!sessionStorage.getItem('popShown')){openPopup();sessionStorage.setItem('popShown','1')}},20000);
 
-// MODAL SERVIÇOS
-const smData={
-  site:{ico:'<svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>',title:'Sites Profissionais',price:'A partir de R$797',desc:'Site rápido, moderno e que aparece no Google. Sua empresa com apresentação profissional, botão de WhatsApp, formulário de contato e mapa. do zero ao ar em 7 dias.',items:['Design exclusivo para sua empresa','100% responsivo. funciona no celular e computador','Otimizado para Google (SEO básico incluído)','Botão de WhatsApp, formulário e mapa integrados','Entrega em até 7 dias úteis','1 ano de hospedagem incluso','Suporte pós-entrega']},
-  auto:{ico:'<svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><path d="M20 2v4m0 0h-4m4 0-3-3"/></svg>',title:'Automações com IA',price:'A partir de R$497',desc:'Atendimento automático no WhatsApp, respostas inteligentes, agendamento e follow-up sem precisar fazer nada. Sua empresa funcionando 24h por dia.',items:['Atendimento automático no WhatsApp 24h','Agendamento de consultas ou reuniões','Follow-up automático com leads e clientes','Respostas inteligentes com IA','Integração com seu site e CRM','Relatório mensal de conversas','Configuração e treinamento completos']},
-  trafego:{ico:'<svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',title:'Gestão de Tráfego Pago',price:'A partir de R$597/mês',desc:'Anúncios no Google e Instagram para trazer clientes qualificados até você. Configuração, gestão mensal e relatório de resultados.',items:['Campanhas no Google Ads','Campanhas no Meta Ads (Facebook e Instagram)','Definição de público-alvo estratégico','Criação de textos e criativos','Monitoramento e otimização semanal','Relatório mensal de resultados','Reunião mensal de alinhamento']},
-  ecom:{ico:'<svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',title:'E-commerce',price:'A partir de R$1.497',desc:'Loja virtual completa para vender seus produtos online. Sem taxa de marketplace, sem dividir seus clientes com concorrentes.',items:['Loja virtual com design exclusivo','Integração com Pix, cartão e boleto','Carrinho de compras e checkout otimizado','Painel para gerenciar produtos e pedidos','Gestão de estoque','Cálculo de frete automático','Otimização para Google Shopping']},
-  soft:{ico:'<svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>',title:'Softwares e Aplicativos',price:'Sob consulta',desc:'Sistemas e apps personalizados para a operação da sua empresa. Controle interno, automação de processos e dashboards sob medida.',items:['Levantamento completo de requisitos','Sistemas web personalizados','Aplicativos para Android e iOS','Dashboards e painéis de controle','Integração com outros sistemas','Automação de processos internos','Suporte e manutenção contínuos']},
-  crm:{ico:'<svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>',title:'CRM Personalizado',price:'Sob consulta',desc:'Sistema de gestão de clientes feito para sua empresa. Controle leads, follow-ups, vendas e receita em um painel simples e eficiente.',items:['Kanban de vendas com etapas personalizadas','Gestão de leads e clientes','Histórico de conversas e interações','Controle financeiro e de receita','Alertas de follow-up','Relatórios de desempenho','Integração com WhatsApp e automações']}
-};
-function openSM(k){
-  const d=smData[k];if(!d)return;
-  document.getElementById('smIco').innerHTML=d.ico;
-  document.getElementById('smTitle').textContent=d.title;
-  document.getElementById('smPrice').textContent=d.price;
-  document.getElementById('smDesc').textContent=d.desc;
-  document.getElementById('smList').innerHTML=d.items.map(i=>`<div class="sm-item">${i}</div>`).join('');
-  document.getElementById('smCta').href=`https://wa.me/5547989201634?text=Olá! Quero saber mais sobre ${d.title}.`;
-  document.getElementById('smOverlay').classList.add('open');
-}
-function closeSM(){document.getElementById('smOverlay').classList.remove('open')}
-document.getElementById('smOverlay').addEventListener('click',e=>{if(e.target===e.currentTarget)closeSM()});
+;
 </script>
 </body>
 </html>
