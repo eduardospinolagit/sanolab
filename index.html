@@ -570,55 +570,6 @@ footer p{font-size:.78rem;color:#333}
 
 
 
-<script>
-// HEADER
-const hdr=document.getElementById('site-header');
-window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40),{passive:true});
-
-// SCROLL REVEAL
-const obs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{rootMargin:'0px 0px -50px 0px',threshold:.1});
-document.querySelectorAll('.fade-up,.fade-scale').forEach(el=>obs.observe(el));
-
-// ROTATING WORDS
-const words=['automações','tráfego pago','e-commerce','aplicativos','CRM','resultados'];
-let wi=0;const rw=document.getElementById('rw');
-setInterval(()=>{rw.classList.add('out');setTimeout(()=>{wi=(wi+1)%words.length;rw.textContent=words[wi];rw.classList.remove('out')},320)},2600);
-
-// TESTIMONIALS PAGED GRID
-const tCards=[...document.querySelectorAll('#tgrid .t-card')];
-let tPage=0;
-function tPerPage(){return innerWidth>900?3:innerWidth>580?2:1}
-function tPages(){return Math.ceil(tCards.length/tPerPage())}
-function buildTDots(){
-  const d=document.getElementById('tdots');d.innerHTML='';
-  for(let i=0;i<tPages();i++){const dot=document.createElement('div');dot.className='t-dot'+(i===0?' on':'');dot.onclick=()=>{tPage=i;showTPage()};d.appendChild(dot)}
-}
-function showTPage(){
-  const pp=tPerPage(),start=tPage*pp,end=start+pp;
-  tCards.forEach((c,i)=>{c.classList.toggle('visible',i>=start&&i<end)});
-  document.querySelectorAll('.t-dot').forEach((d,i)=>d.classList.toggle('on',i===tPage));
-}
-function tNav(dir){tPage=Math.max(0,Math.min(tPage+dir,tPages()-1));showTPage()}
-buildTDots();showTPage();window.addEventListener('resize',()=>{buildTDots();showTPage()});
-
-// POPUP
-function openPopup(){document.getElementById('popup').classList.add('open')}
-function closePopup(){document.getElementById('popup').classList.remove('open')}
-document.getElementById('popup').addEventListener('click',e=>{if(e.target===e.currentTarget)closePopup()});
-setTimeout(()=>{if(!sessionStorage.getItem('popShown')){openPopup();sessionStorage.setItem('popShown','1')}},20000);
-
-<!-- MODAL SERVIÇOS -->
-<div class="sm-overlay" id="smOverlay">
-  <div class="sm-box">
-    <button class="sm-close" onclick="closeSM()">✕</button>
-    <div class="sm-ico" id="smIco"></div>
-    <h3 id="smTitle"></h3>
-    <div class="sm-price" id="smPrice"></div>
-    <p id="smDesc"></p>
-    <div class="sm-list" id="smList"></div>
-    <a id="smCta" href="#" target="_blank" class="btn-primary" style="display:inline-flex" onclick="closeSM()">Quero saber mais →</a>
-  </div>
-</div>
 
 <script>
 // HEADER
@@ -656,28 +607,6 @@ function openPopup(){document.getElementById('popup').classList.add('open')}
 function closePopup(){document.getElementById('popup').classList.remove('open')}
 document.getElementById('popup').addEventListener('click',e=>{if(e.target===e.currentTarget)closePopup()});
 setTimeout(()=>{if(!sessionStorage.getItem('popShown')){openPopup();sessionStorage.setItem('popShown','1')}},20000);
-
-// MODAL SERVIÇOS
-const smData={
-  site:{ico:'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>',title:'Sites Profissionais',price:'A partir de R$797',desc:'Um site profissional é o cartão de visita digital do seu negócio. Clientes pesquisam no Google antes de comprar — se você não aparecer, vai no concorrente.',items:['Design moderno e exclusivo para o seu negócio','100% responsivo — funciona no celular e computador','Otimizado para Google (SEO básico incluído)','Botão de WhatsApp, formulário de contato e mapa','Entrega em até 7 dias úteis','1 ano de hospedagem incluso','Suporte pós-entrega']},
-  auto:{ico:'<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><path d="M20 2v4m0 0h-4m4 0-3-3"/></svg>',title:'Automações com IA',price:'A partir de R$497',desc:'Imagine ter um atendente disponível 24h por dia que responde clientes, agenda consultas e faz follow-up automaticamente — sem você precisar fazer nada.',items:['Atendimento automático no WhatsApp','Agendamento de consultas ou reuniões','Follow-up automático com leads e clientes','Respostas inteligentes com IA','Integração com seu site e CRM','Relatório mensal de conversas','Configuração e treinamento completos']},
-  trafego:{ico:'<svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',title:'Gestão de Tráfego Pago',price:'A partir de R$597/mês',desc:'Anúncios no Google e Instagram para você aparecer exatamente para quem está procurando o que você vende — no momento certo.',items:['Campanhas no Google Ads','Campanhas no Meta Ads (Facebook e Instagram)','Definição de público-alvo estratégico','Criação de textos e criativos','Monitoramento e otimização semanal','Relatório mensal de resultados','Reunião mensal de alinhamento']},
-  ecom:{ico:'<svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',title:'E-commerce',price:'A partir de R$1.497',desc:'Loja virtual completa para vender seus produtos online. Sem taxa de marketplace, sem dividir seus clientes com concorrentes.',items:['Loja virtual com design exclusivo','Integração com Pix, cartão e boleto','Carrinho de compras e checkout otimizado','Painel para gerenciar produtos e pedidos','Gestão de estoque','Cálculo de frete automático','Otimização para Google Shopping']},
-  soft:{ico:'<svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>',title:'Softwares e Aplicativos',price:'Sob consulta',desc:'Quando as ferramentas prontas não atendem as necessidades do seu negócio, criamos uma solução personalizada — sistemas web, apps mobile e dashboards do zero.',items:['Levantamento completo de requisitos','Sistemas web personalizados','Aplicativos para Android e iOS','Dashboards e painéis de controle','Integração com outros sistemas','Automação de processos internos','Suporte e manutenção contínuos']},
-  crm:{ico:'<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>',title:'CRM Personalizado',price:'Sob consulta',desc:'Um CRM organiza todos os seus clientes, leads e vendas em um só lugar — com painel completo para acompanhar cada oportunidade de negócio.',items:['Kanban de vendas com etapas personalizadas','Gestão de leads e clientes','Histórico de conversas e interações','Controle financeiro e de receita','Alertas de follow-up','Relatórios de desempenho','Integração com WhatsApp e automações']}
-};
-function openSM(k){
-  const d=smData[k];if(!d)return;
-  document.getElementById('smIco').innerHTML=d.ico;
-  document.getElementById('smTitle').textContent=d.title;
-  document.getElementById('smPrice').textContent=d.price;
-  document.getElementById('smDesc').textContent=d.desc;
-  document.getElementById('smList').innerHTML=d.items.map(i=>`<div class="sm-item">${i}</div>`).join('');
-  document.getElementById('smCta').href=`https://wa.me/5547989201634?text=Olá! Quero saber mais sobre ${d.title}.`;
-  document.getElementById('smOverlay').classList.add('open');
-}
-function closeSM(){document.getElementById('smOverlay').classList.remove('open')}
-document.getElementById('smOverlay').addEventListener('click',e=>{if(e.target===e.currentTarget)closeSM()});
 </script>
 </body>
 </html>
