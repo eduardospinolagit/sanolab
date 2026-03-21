@@ -134,8 +134,9 @@ footer a{color:var(--g)}
 </footer>
 
 <script>
-// Pega o slug da URL: /blog/meu-post-aqui
-const slug = location.pathname.replace(/^\/blog\//,'').replace(/\/$/,'');
+// Pega o slug da URL via query string: /blog/?p=meu-post
+const params = new URLSearchParams(location.search);
+const slug = params.get('p') || '';
 const posts = JSON.parse(localStorage.getItem('sipos_blog_v2')||'[]');
 
 // Posts fixos (hardcoded) — adicione aqui os 3 artigos iniciais
@@ -295,7 +296,7 @@ if(!post){
   // Relacionados
   const related=allPosts.filter(p=>p.id!==post.id).slice(0,3);
   document.getElementById('related-grid').innerHTML=related.map(p=>`
-    <div class="rel-card" onclick="location.href='/blog/${p.slug}'">
+    <div class="rel-card" onclick="location.href='/blog/?p=${p.slug}'">
       <div class="rel-thumb"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width=".5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
       <div class="rel-info"><div class="rel-cat">${p.cat}</div><div class="rel-title">${p.title}</div></div>
     </div>
